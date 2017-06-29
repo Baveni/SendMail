@@ -13,14 +13,14 @@ try:
     subject = raw_input("enter subj >> ")
     content = raw_input("enter content >> ")
 
-    za_poslat = """
+    sendCont = """
     From: %s
     To: %s
     sub: %s
     %s
     """ % (FromAddr, ", ".join(ToAddr), subject, content)
 
-    server.sendmail(FromAddr, ToAddr, za_poslat)
+    server.sendmail(FromAddr, ToAddr, sendCont)
     server.quit()
 except smtplib.SMTPException:
     print('Something went wrong...')
